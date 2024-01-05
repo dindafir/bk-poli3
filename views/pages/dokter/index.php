@@ -117,6 +117,8 @@
     <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/bk_poli_baru/public/assets/js/framework.js"></script>
     <!-- Settings -->
     <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/bk_poli_baru/public/assets/js/settings.js"></script>
+    <script src="http://<?= $_SERVER['HTTP_HOST']?>/bk_poli_baru/public/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="http://<?= $_SERVER['HTTP_HOST']?>/bk_poli_baru/public/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

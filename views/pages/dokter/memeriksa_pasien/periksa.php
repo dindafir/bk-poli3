@@ -60,7 +60,10 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button class="btn btn-primary" type="submit" name="submit"><i class="fas fa-save"></i> Simpan</button>
+                <button class="btn btn-primary" type="submit" name="submit">
+                    <i class="fas fa-save"></i>
+                        Simpan
+                </button>
                 <input type="reset" class="btn btn-secondary" value="Cancel">
             </div>
         </form>

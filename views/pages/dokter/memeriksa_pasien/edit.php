@@ -30,10 +30,10 @@
             header('Location: http://'.$_SERVER['HTTP_HOST'].'/bk_poli_baru/views/pages/dokter?page=memeriksa_pasien');
         }
     ?>
-        <form action="<?= $BASE_DOKTER_CONTROLLERS. '/periksa/update.php' ?>" method="POST" enctype="multipart/form-data">
+        <form action="<?= $id != "" ? "$BASE_DOKTER_CONTROLLERS/periksa/update.php?id=$id" : null ?>" method="POST" enctype="multipart/form-data">
             <div class="card-body">
-                <input type="hidden" name="id_daftar_poli" class="form-control" value="<?= $id ?>">
                 <div class="mb-3">
+                <input type="hidden" name="id_daftar_poli" class="form-control" value="<?= $id ?>">
                     <label class="form-label">Nama Pasien</label>
                     <input type="text" readonly class="form-control" name="nama" value="<?= $data['nama_pasien'] ?>">
                 </div>
@@ -84,7 +84,10 @@
                 </div>
             </div>
             <div class="card-footer">
-                <input type="submit" class="btn btn-primary" value="Simpan">
+                <button class="btn btn-primary" type="submit" name="submit">
+                    <i class="fas fa-save"></i>
+                        Simpan
+                </button>
                 <input type="reset" class="btn btn-secondary" value="Cancel">
             </div>
         </form>
