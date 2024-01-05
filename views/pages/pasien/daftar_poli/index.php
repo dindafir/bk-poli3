@@ -7,9 +7,14 @@
             </div>
         </div>
     </div>
-        <form action="<?= $BASE_PASIEN_CONTROLLERS . '/daftar_poli/create.php' ?>" method="POST" enctype="multipart/form-data">
+        <?php
+            if (isset($_SESSION['success'])) {
+                echo "<p class='text-success mt-1 mb-3'>" . $_SESSION['success'] . "</p>";
+                unset($_SESSION['success']);
+            }
+        ?>
+        <form action="<?= $BASE_PASIEN_CONTROLLERS . '/daftar_poli/create.php' ?>" method="POST">
             <div class="card-body">
-                <input type="hidden" name="id_daftar_poli" class="form-control" value="<?= $id ?>">
                 <div class="mb-3">
                     <label class="form-label">Nomor Rekam Medis</label>
                     <input type="text" readonly class="form-control" name="no_rm" value="<?= $_SESSION['no_rm'] ?>">
@@ -52,7 +57,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <input type="submit" class="btn btn-primary" value="Simpan">
+                <button type="submit" class="btn btn-primary" name="submit">Daftar</button>
                 <input type="reset" class="btn btn-secondary" value="Cancel">
             </div>
         </form>

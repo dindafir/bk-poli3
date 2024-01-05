@@ -1,3 +1,21 @@
+<?php 
+    include "../../../config/connection.php";
+
+    if (isset($_GET['id_daftar_poli']) && $_GET['id_daftar_poli'] != null) {
+        // Get Data Pasien
+        $id = $_GET['id_daftar_poli'];
+        $query = "SELECT
+        pasien.id AS id_pasien,
+        pasien.nama AS nama_pasien
+        FROM pasien INNER JOIN daftar_poli ON daftar_poli.id_pasien = pasien.id
+        WHERE daftar_poli.id = $id
+        ";
+        $result = mysqli_query($connect, $query);
+        $data = mysqli_fetch_assoc($result);
+    } else {
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/bk-poliklinik/views/pages/dokter?page=memeriksa_pasien');
+    }
+?>
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-header">
@@ -42,7 +60,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <input type="submit" class="btn btn-primary" value="Simpan">
+                <button class="btn btn-primary" type="submit" name="submit"><i class="fas fa-save"></i> Simpan</button>
                 <input type="reset" class="btn btn-secondary" value="Cancel">
             </div>
         </form>
